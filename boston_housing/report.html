@@ -14137,12 +14137,14 @@ Predicted selling price for Client 3&#39;s home: $942,666.67
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">features</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
     <span class="n">feature_av</span> <span class="o">=</span> <span class="n">features</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">feature</span><span class="p">)]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-    <span class="k">print</span> <span class="n">feature</span><span class="p">,</span> <span class="n">feature_av</span>
+    <span class="n">feature_max</span> <span class="o">=</span> <span class="n">features</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">feature</span><span class="p">)]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="n">feature_min</span> <span class="o">=</span> <span class="n">features</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">feature</span><span class="p">)]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+    <span class="k">print</span> <span class="n">feature</span><span class="p">,</span> <span class="s2">&quot;: avg&quot;</span><span class="p">,</span> <span class="n">feature_av</span><span class="p">,</span> <span class="s2">&quot; min&quot;</span><span class="p">,</span> <span class="n">feature_min</span><span class="p">,</span> <span class="s2">&quot; max &quot;</span><span class="p">,</span> <span class="n">feature_max</span>
 </pre></div>
 
 </div>
@@ -14157,9 +14159,9 @@ Predicted selling price for Client 3&#39;s home: $942,666.67
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>RM 6.24028834356
-LSTAT 12.9396319018
-PTRATIO 18.5165644172
+<pre>RM : avg 6.24028834356  min 3.561  max  8.398
+LSTAT : avg 12.9396319018  min 1.98  max  37.97
+PTRATIO : avg 18.5165644172  min 12.6  max  22.0
 </pre>
 </div>
 </div>
@@ -14176,12 +14178,14 @@ PTRATIO 18.5165644172
 <p><strong>Answer: </strong>
 Without knowing the other details of the house, the willingness of the owner to sell fast, I would recommend for now, that each client sell at a price slighly above the predicted price for negotiation and inflation. To be specific:</p>
 <ul>
-<li>Client 1: predicted selling price is \$391,183.33, I recommend selling at \$393,000;</li>
-<li>Client 2: predicted selling price is \$189,123.53, I recommend selling at \$190,000;</li>
-<li>Client 3: predicted selling price is \$942,666.67, I recommend selling at \$960,000.</li>
+<li>Client 1: predicted price is \$391,183.33, I recommend selling at \$393,000;</li>
+<li>Client 2: predicted price is \$189,123.53, I recommend selling at \$190,000;</li>
+<li>Client 3: predicted price is \$942,666.67, I recommend selling at \$960,000.</li>
 </ul>
-<p>I think this prediction seem reasonable. As previously described, I expect a positive relationship between number of room and price of house, a negative relationship between student-teacher ratio and price of house, and a negative relationship between the percentage of homeowners in the neighborhood considered "lower class" and price of house. The latter two features indicate that the district is relatively affluent, therefore the price house in that district tend to be higher as well.</p>
+<p>I think this prediction seem reasonable.</p>
+<p>As previously described, I expect a positive relationship between number of room and price of house, a negative relationship between student-teacher ratio and price of house, and a negative relationship between the percentage of homeowners in the neighborhood considered "lower class" and price of house. The latter two features indicate that the district is relatively affluent, therefore the price of house in that district tends to be higher as well.</p>
 <p>Among all three clients, we see that client 3 has the highest number of rooms (8), lowest values for student teacher ratio (12:1) and "lower class" house owner (3%). As expected, these features gives client 3's house the higest price tag. On the other end of the spectrum, with client 2, whose number of rooms (4) is the lowest, student-teacher ratio(22:1) and "lower class" house owner (32%) highest, the price of client 2's house is also the lowest. Finally, for client 1, who has features that is in bewteen client 2 and client 3, the house of client 1, is also predicted at a value between client 2 and client 3.</p>
+<p>Lastly, the average number of room is 6, average "lower class" percent is 12.9\% and average student teacher ratio is 19. This is similar to client 1, whhich has a predicted value in line with the average price in this dataset (\$454,343). Similarly, the max number of rooms(8), min "lower class" percent(1.98), and min student teacher ratio (13) is similar to than client 3. The max price is over 1 million, which is in line the predicted price for client 3.</p>
 
 </div>
 </div>
