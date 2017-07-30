@@ -11840,6 +11840,16 @@ div#notebook {
 <div class="output_area">
 <div class="prompt"></div>
 
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/Users/yuanqiwang/anaconda/envs/py27/lib/python2.7/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  &#34;This module will be removed in 0.20.&#34;, DeprecationWarning)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Boston housing dataset has 489 data points with 4 variables each.
 </pre>
@@ -11850,9 +11860,7 @@ div#notebook {
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>/Users/yuanqiwang/anaconda/envs/py27/lib/python2.7/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
-  &#34;This module will be removed in 0.20.&#34;, DeprecationWarning)
-/Users/yuanqiwang/anaconda/envs/py27/lib/python2.7/site-packages/sklearn/learning_curve.py:23: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the functions are moved. This module will be removed in 0.20
+<pre>/Users/yuanqiwang/anaconda/envs/py27/lib/python2.7/site-packages/sklearn/learning_curve.py:23: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the functions are moved. This module will be removed in 0.20
   DeprecationWarning)
 </pre>
 </div>
@@ -11892,23 +11900,23 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Minimum price of the data</span>
-<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Maximum price of the data</span>
-<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Mean price of the data</span>
-<span class="n">mean_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Median price of the data</span>
-<span class="n">median_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Standard deviation of prices of the data</span>
-<span class="n">std_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">std_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># Show the calculated statistics</span>
 <span class="k">print</span> <span class="s2">&quot;Statistics for Boston housing dataset:</span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -11937,7 +11945,7 @@ Minimum price: $105,000.00
 Maximum price: $1,024,800.00
 Mean price: $454,342.94
 Median price $438,900.00
-Standard deviation of prices: $165,340.28
+Standard deviation of prices: $165,171.13
 </pre>
 </div>
 </div>
@@ -14127,6 +14135,39 @@ Predicted selling price for Client 3&#39;s home: $942,666.67
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">features</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">feature_av</span> <span class="o">=</span> <span class="n">features</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">feature</span><span class="p">)]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="k">print</span> <span class="n">feature</span><span class="p">,</span> <span class="n">feature_av</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>RM 6.24028834356
+LSTAT 12.9396319018
+PTRATIO 18.5165644172
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -14135,11 +14176,12 @@ Predicted selling price for Client 3&#39;s home: $942,666.67
 <p><strong>Answer: </strong>
 Without knowing the other details of the house, the willingness of the owner to sell fast, I would recommend for now, that each client sell at a price slighly above the predicted price for negotiation and inflation. To be specific:</p>
 <ul>
-<li>I would recommend client 1 to sell at \$393,000;</li>
-<li>I would recommend client 2 to sell at \$190,000;</li>
-<li>I would recommend client 3 to sell at \$960,000.</li>
+<li>Client 1: predicted selling price is \$391,183.33, I recommend selling at \$393,000;</li>
+<li>Client 2: predicted selling price is \$189,123.53, I recommend selling at \$190,000;</li>
+<li>Client 3: predicted selling price is \$942,666.67, I recommend selling at \$960,000.</li>
 </ul>
-<p>By examing the other hours with similar characteristics mannually (process not shown here), I think this prediction seem reasonable.</p>
+<p>I think this prediction seem reasonable. As previously described, I expect a positive relationship between number of room and price of house, a negative relationship between student-teacher ratio and price of house, and a negative relationship between the percentage of homeowners in the neighborhood considered "lower class" and price of house. The latter two features indicate that the district is relatively affluent, therefore the price house in that district tend to be higher as well.</p>
+<p>Among all three clients, we see that client 3 has the highest number of rooms (8), lowest values for student teacher ratio (12:1) and "lower class" house owner (3%). As expected, these features gives client 3's house the higest price tag. On the other end of the spectrum, with client 2, whose number of rooms (4) is the lowest, student-teacher ratio(22:1) and "lower class" house owner (32%) highest, the price of client 2's house is also the lowest. Finally, for client 1, who has features that is in bewteen client 2 and client 3, the house of client 1, is also predicted at a value between client 2 and client 3.</p>
 
 </div>
 </div>
