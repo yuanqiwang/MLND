@@ -1,0 +1,5 @@
+Software: Anaconda, python 3.6.
+Libraries: pandas, numpy, sklearn, lightgbm.
+
+Huge thanks to Rubtsov's work.
+https://github.com/VasiliyRubtsov/wsdm_music_recommendations/blob/master/pipeline.ipynb
