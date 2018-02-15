@@ -1,0 +1,21 @@
+Question 1:
+I first create a function is_anagram() to test if two given words are anagram to each other. Then I use this function to test if part of s is an anagram to t by moving a window the length of t from left to right, starting at the first letter. This method will have to scan every element of the string, until it finds a match or finishes scanning.
+
+Question 2:
+I first create a function is_palindromic() to test if a given word is a palindromic by taking first half of the word and compare it with latter half of the word.
+
+In the solution, I use this function to test if subsets of a given string is palindromic. The subset of a given string is construct by a moving window that starts as long as the string itself and decreases its length by 1 each time if no palindromic is found. For each window, it moves from left to right of the string, until it reaches the end. Since the window starts with the longest possible length, if it finds a palindromic, then the palindromic will be the longest palindromic in the string. This method will have to scan every element of the string, until it finds a match finishes scanning.
+
+Question 3:
+I implemented Kruskal's algorithm for minimum spanning tree. The steps are as follows:
+1. Create a set of the edges with their individual weight; sort the set by ascending order of the weight, and then the alphabetical order of the first node, then the second node. It looks like [(2, 'A', 'B'), (5, 'B', 'C'), (7, 'B', 'D')].
+2. Loop through the edges and include the edges that are not connected already. To be more specific, I need a vertices list containing  separate sets for each node. For example, vertices = [{A}, {B}, {C}, {D}]. Then for each element of the edge, I find the first and second vertex of that element in the vertices list,  and replace the first vertex with the union of the two vertices, and remove the second vertex, the add that edge to a list we will use to create the minimum spanning tree. 
+3. Create the minimum spanning tree by using the edges added to the list from last step.
+
+Question 4:
+To find common ancestor, I need to define a way to find parent first. If the parent list overlap, then there is common ancestor. 
+To find a parent, I look vertically at the matrix, and find the row that has 1. The index of that row, is where the parent locates. From there, I keep finding the parent's parents, until I reach the root. 
+I find all parents of n1 first, I then find parent of n2, and check if the parent of n2 is any of n1's parents. If so, then the first one will be the least common ancestor. This method will go through the tree at least once, and stops when the second iteration for n2 finds a match or finishes iterating.
+
+Question 5:
+I count the total number of element of the linked list, and then move from the first element of the linked list towards mth element from the end. This method will have to go through the entire list, and total length minus m of the linked list. 
