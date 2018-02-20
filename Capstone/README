@@ -1,3 +1,12 @@
+### Project: Music Recommendation.
+
+WSDM has challenged the Kaggle ML community to help solve these problems and build a better music recommendation system. 
+The dataset is from KKBOX, Asia’s leading music streaming service, holding the world’s most comprehensive Asia-Pop music library with over 30 million tracks. 
+They currently use a collaborative filtering based algorithm with matrix factorization and word embedding in their recommendation 
+system.
+
+See Kaggle for more information. https://www.kaggle.com/c/kkbox-music-recommendation-challenge
+
 Software: Anaconda, python 3.6.
 Libraries: pandas, numpy, sklearn, lightgbm.
 
